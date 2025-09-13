@@ -17,8 +17,35 @@ jobs:
       - name: Deploy on EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: ec2-3-7-255-54.ap-south-1.compute.amazonaws.com
           username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEpQIBAAKCAQEAulzvIeK/ZdmBaUhDyYEC8qsMNtyVqOsSNbAsv5iuU4qCjuqp
+            cdx6OStnpXOaourlUxcuOabBKTd16Ar4szMbZwVGh7z/Q82tbqZs/Dbps4PFWJtY
+            O+ZxJJJU5u5nW1rTsZSnzh5g3nm8jnfcDqnBkDPa00cdRNj2Nres/AbFAaJXBNxw
+            8jcq/Lot0BDXiWS1JEcx8c0XSrE2uMUcKa8kPLfXNh6CR6DjP/xSbXEdKNrReygl
+            nqdOn8ano+TRgOlTJP8vXB7V2oT+8pNBgw5TRDIDftD0iATPq4nkZOyq75fQ4u9w
+            srZDy08G9wHmON6Bpi5eCNJ6tAhz9oqi5SlxpwIDAQABAoIBAQCeLU0GnNdJEiCm
+            BKEMgcTHxWhblEQumD7fdMW2ZVfpLlH8Da5+Jt1ScsXJB2MDzo2QRceFRUUDv8AC
+            kHVgXAtxGGgxw7eBjCwdE4LDW7RmGnzA5TExvjjgCpenXkg5oNC3E+6NovkjO35Q
+            CemsRGc3Btw/oUd1bRUlgiZ/zxsdc4K6nHvgKnu1npbikd8XICu/502biTFzijrM
+            lENLt3Y+zygrmUjtUnQ0qzKd3dUeCupKZ+a84cYBNU/YBxnZZ5YLdylG4oa+JH04
+            ahBrVkjX0U4Cj/GekkR30QTSL8DEZ0JaeVCOKkkeLHl9tEtg9QXEfO77NlWFnoVN
+            trWBQ1HBAoGBAN9SM3C/IswmydokLlUhb0LirizJjgq4jL25JW85b0cECZ1we0MP
+            OO9v6lAVn+Bh79/bevxL1zskgo0GT1VXZmVH9XidjIKflcXBnOHUN6N6qKI5RPT1
+            /QzRDfilvov17koY5oiMq4gUSwBuqPKI3MwVyXypzFGB25V0bkbROHlHAoGBANWi
+            QI4dtIBpyNsLuR5MSyB+DEpPspo1+rXWJeMIi7yp8wBykwDR/ZGrVoRS8jLjKoud
+            CwTcYqrappeBU43EnUeQyqQn3gd5YZxPb+pPXJx5yvZ4984cwHQoxBvaZ4eWlI9P
+            Jtb3WSd8+7cknPfXmkGvsgCt+pCB6LSlJvixR3ShAoGBAJgggvI3AhlYAwEazIUp
+            dYV2rXfNBXnAJf/H8/xEf808ruAVE6Km5/4TmuZbFMHhdWplNO5RK5kaUeSHe9uC
+            4jn0Pv+fM2x4EarZLWmZCx3OHLoFkTfdqjfk4UOUhK0LJvxK4h/6046rZDwzJdux
+            59cOsGa/tHOBpne1DLopI/NZAoGAWnsO1mI0adLj9ApCDFgJ1agtMmgQ4AmOtucN
+            QtwCuxRLzFu6cTV/LOwhh4fN9smJ4nnQCe4BiBV1S2PF7JxidMYZXW9ZNVcuhVKL
+            tvSH5+oZkUxowA4jYM9HR/i3spCPOScv7wnx46ymu8mxBbN2LO3p+Sm2nu+2jJQK
+            Lnh/KCECgYEAr/HyOz08byMIz8bBpVKwNjYUTFItM+elsYDYfc+4xqvjbSoJCFzv
+            v8efPZ2OKRrOJJtytLoiz9LF6itMG84pjxFLzUEarMmDHbXZh81KSkEJ7T6Z+MBn
+            2RlNJgB6BVkkJi0C1fsoVQTF3QI3s86B1mCf+7V68l5W8FALswgfidU=
+            -----END RSA PRIVATE KEY-----
           script: |
-             cd ${{ env.PROJECT_PATH }} &&  restart-docker-compose  
+            cd /home/ubuntu/alumna-llm && restart-docker-compose
